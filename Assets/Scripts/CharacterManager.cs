@@ -8,6 +8,7 @@ public class CharacterManager : MonoBehaviour
     {
         get
         {
+            //프로젝트 창에 오브젝트를 빠뜨려도 하나 만들어서 스크립트를 넣고 반환해주는 방어 코드 
             if (_instance == null)
             { _instance = new GameObject("ChatacterManager").AddComponent<CharacterManager>(); }
             return _instance;
@@ -16,12 +17,12 @@ public class CharacterManager : MonoBehaviour
     public Player _player;
     public Player Player
     {
-        get => _player;
+        get { return _player; } //=>_player
         set {_player = value; }
     }
     private void Awake()
     {
-        if (Instance != null)
+        if (_instance == null)
         {
             _instance = this;
             DontDestroyOnLoad(gameObject);
