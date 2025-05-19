@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public interface IDamagable 
 {
-    void TakePhysicalDmage(int damage);
+    void TakePhysicalDamage(int damage);
 }
 public class PlayerCondition : MonoBehaviour , IDamagable
 {
@@ -48,7 +48,7 @@ public class PlayerCondition : MonoBehaviour , IDamagable
         Debug.Log("ав╬З╢ы");
     }
 
-    public void TakePhysicalDmage(int damage)
+    public void TakePhysicalDamage(int damage)
     {
         health.Subtract(damage);
         onTakeDamage?.Invoke();
