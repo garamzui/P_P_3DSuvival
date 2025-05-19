@@ -15,16 +15,28 @@ public class EquipTool : Equip
     [Header("Combat")]
     public bool doesDealDamage;
     public int damage;
+    
+    private Animator animator;
+    private Camera camera;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        camera = Camera.main;
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnAttackInput()
     {
-        
+        if (!attacking)
+        {
+            attacking = true;
+            animator.SetTrigger("Attack");
+            Invoke("OnCanAttack", attackRate);
+        }
+    }
+
+    void OnCanAttack()
+    {
+        attacking = false;
     }
 }
