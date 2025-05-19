@@ -22,6 +22,7 @@ public class MusicZone : MonoBehaviour
         {
             audioSource.volume = Mathf.MoveTowards(audioSource.volume, targetVolume, (maxVolume / fadeTime) * Time.deltaTime);
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +30,7 @@ public class MusicZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             targetVolume = maxVolume;
+            Debug.Log("노래틀어야되");
         }
     }
 
@@ -37,6 +39,7 @@ public class MusicZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             targetVolume = 0.0f;
+            Debug.Log("노래꺼야되");
         }
     }
 }
