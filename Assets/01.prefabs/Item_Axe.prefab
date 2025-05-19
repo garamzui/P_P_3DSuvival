@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7101690327632330142}
   - component: {fileID: 3228112295256731529}
   - component: {fileID: 7884138414680727779}
-  m_Layer: 0
+  - component: {fileID: 4585902364696138873}
+  m_Layer: 7
   m_Name: Item_Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +83,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4585902364696138873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848380171494314486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ffa7eafc16e9a4788ec1c3247aa901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1e4658d0d4052de4eb4fe15d1c446771, type: 2}
 --- !u!1 &8643098943869397154
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +107,7 @@ GameObject:
   - component: {fileID: 9080528149212691046}
   - component: {fileID: 6265174934189398956}
   - component: {fileID: 5941659666128486686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ax_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 8643098943869397154}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.88, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
