@@ -25,7 +25,10 @@ public class UIInventory : MonoBehaviour
     private PlayerCondition condition;
 
     ItemData selectedItem;
-    int selectedItemIndex;
+    int selectedItemIndex = 0;
+
+    int curEquipIndex;
+
 
 
     // Start is called before the first frame update
@@ -227,5 +230,34 @@ public class UIInventory : MonoBehaviour
 
         }
         UpdateUI();
+    }
+
+    public void OnEquipButton()
+    {
+        if (slots[curEquipIndex].equipped)
+        { 
+            UnEquip(curEquipIndex);
+        }
+        slots[selectedItemIndex].equipped = true;
+        curEquipIndex = selectedItemIndex;
+        CharacterManager.Instance.Player.equip.EquipNew(selectedItem);
+        UpdateUI();
+        SelectItem(selectedItemIndex);
+    }
+
+    void UnEquip(int index)
+    {
+        slots[index].equipped = false;
+        CharacterManager.Instance.Player.equip.UnEquip();
+        UpdateUI();
+        if (selectedItemIndex == index)
+        { 
+            SelectItem(selectedItemIndex);
+        }
+    }
+
+    public void OnUnEquipButton() 
+    {
+        UnEquip(selectedItemIndex);
     }
 }
